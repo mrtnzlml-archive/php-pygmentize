@@ -1,0 +1,170 @@
+.Whitespace {
+	color: #bbb
+}
+
+.Comment {
+	color: #408080;
+	font-style: italic;
+}
+
+.Comment.Preproc {
+	color: #bc7a00;
+	font-style: normal;
+}
+
+.Keyword {
+	color: #008000;
+	font-weight: bold;
+}
+
+.Keyword.Pseudo {
+	font-style: normal;
+}
+
+.Keyword.Type {
+	font-style: normal;
+	color: #b00040
+}
+
+.Operator {
+	color: #666
+}
+
+.Operator.Word {
+	color: #a2f;
+	font-weight: bold;
+}
+
+.Name.Builtin {
+	color: #008000
+}
+
+.Name.Function {
+	color: #00f
+}
+
+.Name.Class {
+	color: #00f;
+	font-weight: bold;
+}
+
+.Name.Namespace {
+	color: #00f;
+	font-weight: bold;
+}
+
+.Name.Exception {
+	color: #d2413a;
+	font-weight: bold;
+}
+
+.Name.Variable {
+	color: #19177c
+}
+
+.Name.Constant {
+	color: #800
+}
+
+.Name.Label {
+	color: #a0a000
+}
+
+.Name.Entity {
+	color: #999;
+	font-weight: bold;
+}
+
+.Name.Attribute {
+	color: #7d9029
+}
+
+.Name.Tag {
+	color: #008000;
+	font-weight: bold;
+}
+
+.Name.Decorator {
+	color: #a2f
+}
+
+.String {
+	color: #ba2121
+}
+
+.String.Doc {
+	font-style: italic
+}
+
+.String.Interpol {
+	color: #b68;
+	font-weight: bold;
+}
+
+.String.Escape {
+	color: #b62;
+	font-weight: bold;
+}
+
+.String.Regex {
+	color: #b68
+}
+
+.String.Symbol {
+	color: #19177c
+}
+
+.String.Other {
+	color: #008000
+}
+
+.Number {
+	color: #666
+}
+
+.Generic.Heading {
+	color: #000080;
+	font-weight: bold;
+}
+
+.Generic.Subheading {
+	color: #800080;
+	font-weight: bold;
+}
+
+.Generic.Deleted {
+	color: #a00000
+}
+
+.Generic.Inserted {
+	color: #00a000
+}
+
+.Generic.Error {
+	color: #f00
+}
+
+.Generic.Emph {
+	font-style: italic
+}
+
+.Generic.Strong {
+	font-weight: bold;
+}
+
+.Generic.Prompt {
+	color: #000080;
+	font-weight: bold;
+}
+
+.Generic.Output {
+	color: #888
+}
+
+.Generic.Traceback {
+	color: #04d
+}
+
+.Error {
+	border: 1px solid #f00;
+}

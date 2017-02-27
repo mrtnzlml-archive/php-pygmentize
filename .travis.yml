@@ -1,0 +1,17 @@
+language: php
+
+php:
+  - 7.1
+
+before_script:
+  - travis_retry composer install --prefer-dist
+
+script:
+  - vendor/bin/tester -p php tests/
+
+cache:
+  directories:
+    - vendor
+
+notifications:
+  email: false
