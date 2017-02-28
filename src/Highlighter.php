@@ -26,7 +26,7 @@ final class Highlighter
 	{
 		$this->originalInput = file_get_contents($file);
 
-		$tokens = $this->lexer->getTokens();
+		$tokens = \Adeira\Utils::expandIncludes($this->lexer->getTokens());
 		$iteratorMax = mb_strlen($this->originalInput);
 
 		while ($this->stack->getCursorPosition() < $iteratorMax) {
