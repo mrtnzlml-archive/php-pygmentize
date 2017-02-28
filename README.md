@@ -5,7 +5,6 @@ See: `preview.php` output
 ---
 
 TODO:
-- push více stavů do stacku (advanced)
 - using('another lexer')
 - change package namespace
 
@@ -23,3 +22,4 @@ LANGUAGES:
 - tex/latex
 - css
 - java
+- latte/smarty

@@ -30,7 +30,7 @@ final class HtmlTest extends \Tester\TestCase
 	{
 		$highlighter = new Highlighter(new HtmlLexer, new NullFormatter);
 		$highlighter->highlight(__DIR__ . '/sample.html');
-		Assert::same(166, $highlighter->getComplexity());
+		Assert::same(253, $highlighter->getComplexity());
 	}
 
 }

@@ -15,14 +15,16 @@ final class Html implements \Adeira\ILexer
 				['<!--', 'Comment', 'comment'],
 				['<\?.*?\?>', 'Comment.Preproc'],
 				['<![^>]*>', 'Comment.Preproc'],
-//				[
-//					'(<)(\s*)(script)(\s*)',
-//					['Punctuation', 'Text', 'Name.Tag', 'Text'], //TODO: ('script-content', 'tag')
-//				],
-//				[
-//					'(<)(\s*)(style)(\s*)',
-//					['Punctuation', 'Text', 'Name.Tag', 'Text'], //TODO: ('script-content', 'tag')
-//				],
+				[
+					'(<)(\s*)(script)(\s*)',
+					['Punctuation', 'Text', 'Name.Tag', 'Text'],
+					['script-content', 'tag'],
+				],
+				[
+					'(<)(\s*)(style)(\s*)',
+					['Punctuation', 'Text', 'Name.Tag', 'Text'],
+					['style-content', 'tag'],
+				],
 				[
 					'(<)(\s*)([\w:.-]+)',
 					['Punctuation', 'Text', 'Name.Tag'],
@@ -51,6 +53,24 @@ final class Html implements \Adeira\ILexer
 					['Punctuation', 'Text', 'Punctuation'],
 					'#pop',
 				],
+			],
+			'script-content' => [
+				[
+					'(<)(\s*)(/)(\s*)(script)(\s*)(>)',
+					['Punctuation', 'Text', 'Punctuation', 'Text', 'Name.Tag', 'Text', 'Punctuation'],
+					'#pop',
+				],
+//				['.+?(?=<\s*/\s*script\s*>)', using(JavascriptLexer)], //TODO
+				['[\s\S]+?(?=<\s*/\s*script\s*>)', 'Text'], //TODO: remove
+			],
+			'style-content' => [
+				[
+					'(<)(\s*)(/)(\s*)(style)(\s*)(>)',
+					['Punctuation', 'Text', 'Punctuation', 'Text', 'Name.Tag', 'Text', 'Punctuation'],
+					'#pop',
+				],
+//				['.+?(?=<\s*/\s*style\s*>)', using(CssLexer)], //TODO
+				['[\s\S]+?(?=<\s*/\s*style\s*>)', 'Text'], //TODO: remove
 			],
 			'attr' => [
 				['".*?"', 'String', '#pop'],

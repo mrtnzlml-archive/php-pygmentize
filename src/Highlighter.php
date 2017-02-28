@@ -26,13 +26,14 @@ final class Highlighter
 	{
 		$this->originalInput = file_get_contents($file);
 
+		$tokens = $this->lexer->getTokens();
 		$iteratorMax = mb_strlen($this->originalInput);
+
 		while ($this->stack->getCursorPosition() < $iteratorMax) {
 			$substring = mb_substr($this->originalInput, $this->stack->getCursorPosition());
 
-			$tokens = $this->lexer->getTokens();
-			$resolvedLength = $this->resolveState($substring, $tokens);
-			if ($resolvedLength === TRUE) { // match
+			$match = $this->resolveState($substring, $tokens);
+			if ($match === TRUE) {
 				continue;
 			}
 
@@ -57,9 +58,9 @@ final class Highlighter
 	private function resolveState(string $input, array $tokens): bool
 	{
 		foreach ($tokens[$this->stack->top()] as $token) {
-			$pattern = $token[0];
-
 			self::$stepsCounter++;
+
+			$pattern = $token[0];
 			if (preg_match("~^$pattern~", $input, $matches)) {
 
 				if (is_string($token[1])) {
@@ -71,15 +72,15 @@ final class Highlighter
 				}
 
 				$this->stack->increaseCursorPosition(mb_strlen($matches[0]));
-				$input = mb_substr($this->originalInput, $this->stack->getCursorPosition());
 
-				if (isset($token[2])) { // let's go deeper
+				if (isset($token[2])) { // let's go deeper to the next resolver stage
 					if ($token[2] === '#pop') {
 						$this->stack->pop();
 					} else {
-						$this->stack->push($token[2]);
+						foreach ((array)$token[2] as $item) {
+							$this->stack->push($item);
+						}
 					}
-					return $this->resolveState($input, $tokens);
 				}
 
 				return TRUE;

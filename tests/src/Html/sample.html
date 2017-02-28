@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Titulek stránky</title>
+    <title>Titulek stránky</title>
+    <script>
+        alert('xss')
+    </script>
+    <style>
+        body {
+            background-color: rgba(212, 255, 0, 0.33);
+        }
+    </style>
 </head>
 <body>
-	<h1>Nadpis stránky</h1>
-	<p>Toto je <a href="http://example.com/">odkaz</a> v odstavci.</p>
-	<!-- toto je komentář -->
+    <h1>Nadpis stránky</h1>
+    <p>Toto je <a href="http://example.com/">odkaz</a> v odstavci&hellip;</p>
+    <!-- toto je <!-- komentář -->
+    <I:am:unknown with='attribute'/>
 </body>
 </html>
