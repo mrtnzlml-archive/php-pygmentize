@@ -60,7 +60,7 @@ final class Highlighter
 		foreach ($tokens[$this->stack->top()] as $token) {
 			self::$stepsCounter++;
 
-			$pattern = $token[0];
+			$pattern = preg_replace('`(~)`', '\\\\$1', $token[0]);
 			if (preg_match("~^$pattern~", $input, $matches)) {
 
 				if (is_string($token[1])) {
