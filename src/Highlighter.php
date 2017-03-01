@@ -60,7 +60,11 @@ final class Highlighter
 
 	private function resolveState(string $input, array $tokens): bool
 	{
-		foreach ($tokens[$this->stack->top()] as $token) {
+		$stackLevel = $this->stack->top();
+		if (!isset($tokens[$stackLevel])) {
+			throw new \Exception("Section '$stackLevel' is missing in tokens.");
+		}
+		foreach ($tokens[$stackLevel] as $token) {
 			self::$stepsCounter++;
 
 			$pattern = preg_replace('`(~)`', '\\\\$1', $token[0]);
