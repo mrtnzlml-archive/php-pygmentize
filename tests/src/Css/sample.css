@@ -1,0 +1,22 @@
+:root {
+    /* comment */
+    --red-hover: #cc0700;
+}
+
+a, a:hover, a:focus {
+    color: var(--red);
+}
+
+a[href^="#error:"] {
+    background: url('http://a.b/c.d');
+    color: white;
+}
+
+@media screen and (min-width: 720px)
+{
+    h1 > a > #idd > span.transf2 {
+        position: absolute;
+        top: 2.1rem;
+        transform: rotate(15deg);
+    }
+}
