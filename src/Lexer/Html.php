@@ -69,8 +69,7 @@ final class Html implements \Adeira\ILexer
 					['Punctuation', 'Text', 'Punctuation', 'Text', 'Name.Tag', 'Text', 'Punctuation'],
 					'#pop',
 				],
-//				['.+?(?=<\s*/\s*style\s*>)', using(CssLexer)], //TODO
-				['[\s\S]+?(?=<\s*/\s*style\s*>)', 'Text'], //TODO: remove
+				['[\s\S]+?(?=<\s*/\s*style\s*>)', new \Adeira\Lexer\Css],
 			],
 			'attr' => [
 				['".*?"', 'String', '#pop'],

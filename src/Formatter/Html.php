@@ -91,7 +91,7 @@ final class Html implements \Adeira\IFormatter
 			throw new \Exception("Token '$type' doesn't exist."); //FIXME: jak lépe?
 		}
 
-		if (!$fragment || preg_match('~^\s$~', $fragment)) { //do not polute output with empty tags
+		if ($fragment === '' || preg_match('~^\s$~', $fragment)) { //do not polute output with empty tags
 			return $fragment;
 		}
 

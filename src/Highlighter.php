@@ -24,7 +24,10 @@ final class Highlighter
 
 	public function highlight(string $file): string
 	{
-		$this->originalInput = file_get_contents($file);
+		$this->originalInput = $file;
+		if (is_file($file)) {
+			$this->originalInput = file_get_contents($file);
+		}
 
 		$tokens = \Adeira\Utils::expandIncludes($this->lexer->getTokens());
 		$iteratorMax = mb_strlen($this->originalInput);
@@ -63,7 +66,12 @@ final class Highlighter
 			$pattern = preg_replace('`(~)`', '\\\\$1', $token[0]);
 			if (preg_match("~^$pattern~", $input, $matches)) {
 
-				if (is_string($token[1])) {
+				if ($token[1] instanceof ILexer) {
+
+					$nestedLexer = new self($token[1], $this->formatter);
+					$this->stack->buffer($nestedLexer->highlight($matches[0]));
+
+				} elseif (is_string($token[1])) {
 					$this->stack->buffer($this->formatter->format($matches[0], $token[1]));
 				} else { // multiple tokens at once
 					foreach (array_slice($matches, 1) as $key => $fragment) {
