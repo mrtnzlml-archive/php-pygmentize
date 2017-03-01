@@ -16,12 +16,14 @@ final class Stack
 		$this->resolveLevel[] = $levelName;
 	}
 
-	public function pop(): void
+	public function pop(int $distance = 1): void
 	{
-		if (count($this->resolveLevel) === 1) {
-			return; //do not pop 'root' level
+		for ($iterator = 1; $iterator <= $distance; $iterator++) {
+			if (count($this->resolveLevel) === 1) {
+				return; //do not pop 'root' level
+			}
+			array_pop($this->resolveLevel);
 		}
-		array_pop($this->resolveLevel);
 	}
 
 	/**
