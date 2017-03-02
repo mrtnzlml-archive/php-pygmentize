@@ -40,7 +40,7 @@ final class Highlighter
 				continue;
 			}
 
-			$unknowStatement = $this->formatter->format($this->originalInput[$this->stack->getCursorPosition()], 'Error');
+			$unknowStatement = $this->formatter->format(mb_substr($substring, 0, 1, 'utf-8'), 'Error');
 			$this->stack->buffer($unknowStatement);
 			$this->stack->increaseCursorPosition(1);
 
