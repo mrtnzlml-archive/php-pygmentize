@@ -68,7 +68,7 @@ final class Highlighter
 			self::$stepsCounter++;
 
 			$pattern = preg_replace('`(~)`', '\\\\$1', $token[0]);
-			if (preg_match("~^$pattern~", $input, $matches)) {
+			if (preg_match("~^$pattern~u", $input, $matches)) {
 
 				if ($token[1] instanceof ILexer) {
 
