@@ -86,10 +86,10 @@ final class Highlighter
 				$this->stack->increaseCursorPosition(mb_strlen($matches[0]));
 
 				if (isset($token[2])) { // let's go deeper to the next resolver stage
-					if (is_string($token[2]) && preg_match('~#pop(:(\d+))?~', $token[2], $matches)) {
-						$this->stack->pop((int)($matches[2] ?? 1));
-					} else {
-						foreach ((array)$token[2] as $item) {
+					foreach ((array)$token[2] as $item) {
+						if (preg_match('~#pop(:(\d+))?~', $item, $matches)) {
+							$this->stack->pop((int)($matches[2] ?? 1));
+						} else {
 							$this->stack->push($item);
 						}
 					}
