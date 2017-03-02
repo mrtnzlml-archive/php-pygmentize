@@ -60,8 +60,7 @@ final class Html implements \Adeira\ILexer
 					['Punctuation', 'Text', 'Punctuation', 'Text', 'Name.Tag', 'Text', 'Punctuation'],
 					'#pop',
 				],
-//				['.+?(?=<\s*/\s*script\s*>)', using(JavascriptLexer)], //TODO
-				['[\s\S]+?(?=<\s*/\s*script\s*>)', 'Text'], //TODO: remove
+				['[\s\S]+?(?=<\s*/\s*script\s*>)', new \Adeira\Lexer\JavaScript],
 			],
 			'style-content' => [
 				[
