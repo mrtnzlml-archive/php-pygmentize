@@ -87,7 +87,7 @@ final class Html implements \Adeira\IFormatter
 
 	public function format(string $fragment, string $type): string
 	{
-		if (!in_array($type, $this->allowedTokens, TRUE)) { //FIXME: speciální Error
+		if (!in_array($type, $this->allowedTokens, TRUE)) {
 			throw new \Exception("Token '$type' doesn't exist."); //FIXME: jak lépe?
 		}
 
