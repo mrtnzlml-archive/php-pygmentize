@@ -1,0 +1,25 @@
+address:
+    street: 742 Evergreen Terrace
+    hex: 0xA5f
+    octal: 0o123
+    binary: 0b0110
+    datetime: 2017-12-31T10:12:14 Z
+
+phones: { home: 555-6528, work: "555-7334" }
+
+multi: '''
+    one line
+    second line
+'''
+
+children: # this is a comment
+    - [Bart, Maggie, Marge]
+    - [TRUE, no, Null]
+
+entity: Column(type=int, nulls=yes)
+
+string: 'characters like #()= put in quotes'
+
+multi2: """
+third line
+"""

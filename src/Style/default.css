@@ -9,7 +9,7 @@
 
 .Comment.Preproc {
 	color: #bc7a00;
-	font-style: normal;
+	font-weight: normal;
 }
 
 .Keyword {
@@ -18,11 +18,11 @@
 }
 
 .Keyword.Pseudo {
-	font-style: normal;
+	font-weight: normal;
 }
 
 .Keyword.Type {
-	font-style: normal;
+	font-weight: normal;
 	color: #b00040
 }
 

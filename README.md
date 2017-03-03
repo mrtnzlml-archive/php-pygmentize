@@ -5,11 +5,9 @@ See: `preview.php` output
 ---
 
 TODO:
-- using('another lexer')
 - change package namespace
 
 LANGUAGES:
-- neon
 - php
 - python
 - js/javascript/json
