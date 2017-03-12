@@ -1,0 +1,24 @@
+<span class='Keyword Type'>query</span> <span class='Keyword'>getNameOrToken</span><span class='Punctuation'>(</span><span class='Name Variable'>$switch</span><span class='Punctuation'>:</span> <span class='Keyword'>Boolean</span><span class='Punctuation'>!</span><span class='Punctuation'>)</span> <span class='Punctuation'>{</span>
+  <span class='Keyword'>user</span><span class='Punctuation'>(</span><span class='Text'>id:</span> <span class='String Double'>&quot;007&quot;</span><span class='Punctuation'>)</span> <span class='Punctuation'>{</span> <span class='Comment Single'># comment</span>
+    <span class='Keyword'>username</span> <span class='Keyword Type'>@skip</span><span class='Punctuation'>(</span><span class='Text'>if:</span> <span class='Name Variable'>$switch</span><span class='Punctuation'>)</span>
+    <span class='Keyword'>token</span> <span class='Keyword Type'>@include</span><span class='Punctuation'>(</span><span class='Text'>if:</span> <span class='Name Variable'>$switch</span><span class='Punctuation'>)</span>
+    <span class='Operator'>...</span> <span class='Keyword Type'>on</span> <span class='Keyword'>User</span> <span class='Punctuation'>{</span>
+      <span class='Keyword'>field</span><span class='Punctuation'>(</span><span class='Text'>arg:</span> <span class='Number Float'>-1e6</span><span class='Punctuation'>)</span>
+    <span class='Punctuation'>}</span>
+  <span class='Punctuation'>}</span>
+<span class='Punctuation'>}</span>
+
+<span class='Punctuation'>{</span><span class='Keyword'>__schema</span><span class='Punctuation'>{</span><span class='Keyword'>directives</span><span class='Punctuation'>{</span><span class='Keyword'>name</span><span class='Text'>,</span><span class='Keyword'>description</span><span class='Text'>,</span><span class='Keyword'>locations</span><span class='Text'>,</span><span class='Keyword'>args</span><span class='Punctuation'>{</span><span class='Keyword'>name</span><span class='Text'>,</span><span class='Keyword'>description</span><span class='Punctuation'>}</span><span class='Punctuation'>}</span><span class='Punctuation'>}</span><span class='Punctuation'>}</span>
+
+<span class='Keyword Type'>mutation</span> <span class='Keyword'>create</span><span class='Punctuation'>(</span>
+  <span class='Name Variable'>$stationId</span><span class='Punctuation'>:</span> <span class='Keyword'>ID</span><span class='Punctuation'>!</span>
+  <span class='Name Variable'>$quantities</span><span class='Punctuation'>:</span> <span class='Keyword'>PhysicalQuantitiesInput</span><span class='Punctuation'>!</span>
+<span class='Punctuation'>)</span> <span class='Punctuation'>{</span>
+  <span class='Keyword'>createWeatherStationRecord</span><span class='Punctuation'>(</span>
+    <span class='Text'>id:</span> <span class='Name Variable'>$stationId</span>
+    <span class='Text'>quantities:</span> <span class='Name Variable'>$quantities</span>
+  <span class='Punctuation'>)</span> <span class='Punctuation'>{</span>
+    <span class='Keyword'>id</span>
+    <span class='Keyword'>creationDate</span>
+  <span class='Punctuation'>}</span>
+<span class='Punctuation'>}</span>

@@ -8,7 +8,8 @@ function show(string $filename, string $title) {
 }
 
 show(__DIR__ . '/tests/src/Css/expected.html', 'CSS');
-show(__DIR__ . '/tests/src/Diff/expected.html', 'DIFF');
+show(__DIR__ . '/tests/src/Diff/expected.html', 'Diff');
+show(__DIR__ . '/tests/src/GraphQL/expected.html', 'GraphQL');
 show(__DIR__ . '/tests/src/Html/expected.html', 'HTML');
 show(__DIR__ . '/tests/src/Ini/expected.html', 'INI');
-show(__DIR__ . '/tests/src/JavaScript/expected.html', 'JS');
+show(__DIR__ . '/tests/src/JavaScript/expected.html', 'JavaScript');

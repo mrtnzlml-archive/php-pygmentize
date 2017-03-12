@@ -1,0 +1,24 @@
+query getNameOrToken($switch: Boolean!) {
+  user(id: "007") { # comment
+    username @skip(if: $switch)
+    token @include(if: $switch)
+    ... on User {
+      field(arg: -1e6)
+    }
+  }
+}
+
+{__schema{directives{name,description,locations,args{name,description}}}}
+
+mutation create(
+  $stationId: ID!
+  $quantities: PhysicalQuantitiesInput!
+) {
+  createWeatherStationRecord(
+    id: $stationId
+    quantities: $quantities
+  ) {
+    id
+    creationDate
+  }
+}
