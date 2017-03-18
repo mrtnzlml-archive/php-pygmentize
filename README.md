@@ -10,6 +10,5 @@ TODO:
 LANGUAGES:
 - python
 - cpp
-- sql
 - tex/latex
 - java
