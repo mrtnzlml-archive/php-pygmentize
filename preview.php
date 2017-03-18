@@ -13,3 +13,4 @@ show(__DIR__ . '/tests/src/GraphQL/expected.html', 'GraphQL');
 show(__DIR__ . '/tests/src/Html/expected.html', 'HTML');
 show(__DIR__ . '/tests/src/Ini/expected.html', 'INI');
 show(__DIR__ . '/tests/src/JavaScript/expected.html', 'JavaScript');
+show(__DIR__ . '/tests/src/Php/expected.html', 'PHP');

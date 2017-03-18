@@ -8,9 +8,8 @@ TODO:
 - change package namespace
 
 LANGUAGES:
-- php
 - python
-- js/javascript/json
+- json
 - cpp
 - sql
 - tex/latex

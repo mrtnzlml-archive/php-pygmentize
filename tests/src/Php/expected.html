@@ -1,0 +1,31 @@
+<span class='Comment Preproc'>&lt;?php</span>
+
+<span class='String Doc'>/**
+ * Comment
+ */</span>
+<span class='Keyword'>class</span> <span class='Name Class'>Aaa</span> <span class='Keyword'>extends</span> <span class='Name Class'>Bbb</span> <span class='Keyword'>implements</span> <span class='Name Class'>Ccc</span> <span class='Punctuation'>{</span><span class='Text'>
+
+    </span><span class='Keyword'>public</span> <span class='Keyword'>const</span> <span class='Name Constant'>SINGLE</span> <span class='Operator'>=</span> <span class='String Single'>'OK'</span><span class='Punctuation'>;</span><span class='Text'>
+    </span><span class='Keyword'>private</span> <span class='Keyword'>const</span> <span class='Name Constant'>DOUBLE</span> <span class='Operator'>=</span> <span class='String Double'>&quot;</span><span class='String Double'>OK</span><span class='String Double'>&quot;</span><span class='Punctuation'>;</span><span class='Text'>
+
+    </span><span class='Keyword'>public</span> <span class='Keyword'>function</span> <span class='Name Function'>run</span><span class='Punctuation'>(</span><span class='Operator'>?</span><span class='Keyword'>string</span> <span class='Name Variable'>$variable</span><span class='Punctuation'>)</span><span class='Operator'>:</span> <span class='Keyword'>void</span><span class='Text'>
+    </span><span class='Punctuation'>{</span><span class='Text'>
+        </span><span class='Name Variable'>$out</span> <span class='Operator'>=</span> <span class='String'>&lt;&lt;&lt;</span><span class='String'>&quot;</span><span class='String Delimiter'>HEREDOC</span><span class='String'>&quot;
+This is $variable string...
+</span><span class='String Delimiter'>HEREDOC</span><span class='Punctuation'>;</span>
+<span class='Text'>        </span><span class='Name Variable'>$_x</span> <span class='Operator'>=</span> <span class='Name Constant'>__NAMESPACE__</span> <span class='Operator'>.</span> <span class='String Backtick'>`ls -l`</span><span class='Punctuation'>;</span><span class='Text'>
+        </span><span class='Keyword'>return</span><span class='Punctuation'>;</span> <span class='Comment Single'>//void comment
+</span><span class='Text'>    </span><span class='Punctuation'>}</span><span class='Text'>
+
+    </span><span class='Keyword'>public</span> <span class='Keyword'>function</span> <span class='Name Function Magic'>__d</span><span class='Name Function'>estruct</span><span class='Punctuation'>()</span><span class='Text'>
+    </span><span class='Punctuation'>{</span><span class='Text'>
+        </span><span class='Name Variable'>$this</span><span class='Operator'>-&gt;</span><span class='Name Attribute'>self</span> <span class='Operator'>=</span> <span class='Keyword'>new</span> <span class='Keyword'>self</span><span class='Punctuation'>(</span><span class='Text'>
+            </span><span class='Keyword'>self</span><span class='Operator'>::</span><span class='Name Attribute'>DOUBLE</span><span class='Punctuation'>,</span><span class='Text'>
+            </span><span class='Number Float'>10e3</span><span class='Punctuation'>,</span> <span class='Operator'>-</span><span class='Number Float'>6.7</span><span class='Punctuation'>,</span> <span class='Number Oct'>007</span><span class='Punctuation'>,</span> <span class='Number Hex'>0xabc</span><span class='Punctuation'>,</span><span class='Text'>
+            </span><span class='String Double'>&quot;</span><span class='String Double'>string </span><span class='String Interpol'>$variable</span><span class='String Double'> string</span><span class='String Double'>&quot;</span><span class='Text'>
+        </span><span class='Punctuation'>);</span><span class='Text'>
+    </span><span class='Punctuation'>}</span>
+
+<span class='Punctuation'>}</span>
+
+<span class='Punctuation'>(</span><span class='Keyword'>new</span> <span class='Keyword'>Aaa</span><span class='Punctuation'>)</span><span class='Operator'>-&gt;</span><span class='Name Attribute'>run</span><span class='Punctuation'>();</span>
