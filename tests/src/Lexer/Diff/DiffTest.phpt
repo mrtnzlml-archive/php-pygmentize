@@ -6,7 +6,7 @@ use Adeira\Highlighter;
 use Adeira\Lexer\Diff;
 use Tester\Assert;
 
-require __DIR__ . '/../../bootstrap.php';
+require __DIR__ . '/../../../bootstrap.php';
 
 /**
  * @testCase
