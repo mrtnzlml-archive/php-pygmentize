@@ -1,4 +1,7 @@
 {
+  "name": "mrtnzlml/php-pygmentize",
+  "description": "Pure PHP linear syntax highlighter inspired by Pygmentize",
+  "license": "MIT",
   "require-dev": {
     "nette/tester": "^1.7"
   },
