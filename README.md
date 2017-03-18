@@ -9,7 +9,6 @@ TODO:
 
 LANGUAGES:
 - python
-- json
 - cpp
 - sql
 - tex/latex

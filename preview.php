@@ -7,10 +7,11 @@ function show(string $filename, string $title) {
 	echo "<h2 id='$title'>$title</h2><pre>$content</pre><hr>";
 }
 
-show(__DIR__ . '/tests/src/Css/expected.html', 'CSS');
-show(__DIR__ . '/tests/src/Diff/expected.html', 'Diff');
-show(__DIR__ . '/tests/src/GraphQL/expected.html', 'GraphQL');
-show(__DIR__ . '/tests/src/Html/expected.html', 'HTML');
-show(__DIR__ . '/tests/src/Ini/expected.html', 'INI');
-show(__DIR__ . '/tests/src/JavaScript/expected.html', 'JavaScript');
-show(__DIR__ . '/tests/src/Php/expected.html', 'PHP');
+show(__DIR__ . '/tests/src/Lexer/Css/expected.html', 'CSS');
+show(__DIR__ . '/tests/src/Lexer/Diff/expected.html', 'Diff');
+show(__DIR__ . '/tests/src/Lexer/GraphQL/expected.html', 'GraphQL');
+show(__DIR__ . '/tests/src/Lexer/Html/expected.html', 'HTML');
+show(__DIR__ . '/tests/src/Lexer/Ini/expected.html', 'INI');
+show(__DIR__ . '/tests/src/Lexer/JavaScript/expected.js.html', 'JavaScript');
+show(__DIR__ . '/tests/src/Lexer/JavaScript/expected.json.html', 'JSON');
+show(__DIR__ . '/tests/src/Lexer/Php/expected.html', 'PHP');
