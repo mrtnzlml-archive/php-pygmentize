@@ -13,4 +13,3 @@ LANGUAGES:
 - sql
 - tex/latex
 - java
-- latte/smarty

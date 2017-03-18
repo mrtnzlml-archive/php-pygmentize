@@ -1,0 +1,11 @@
+<ul n:if="$items">
+    <style> body { color: red; font-style: {$var}; } </style>
+    {foreach $items as $item}
+        <li id="item-{$iterator->counter}">{$item|capitalize|custom}</li>
+        {foreach [1, 2, "3"] as $id} ... {/foreach}
+        {var $items = ['I', '♥', 'Nette Framework']}
+        <h1>{$heading|truncate:20,''}</h1>
+        <script> alert('Hello ' + {$name} + '!'); </script>
+        <!-- html comment -->
+    {/foreach}
+</ul>

@@ -14,4 +14,5 @@ show(__DIR__ . '/tests/src/Lexer/Html/expected.html', 'HTML');
 show(__DIR__ . '/tests/src/Lexer/Ini/expected.html', 'INI');
 show(__DIR__ . '/tests/src/Lexer/JavaScript/expected.js.html', 'JavaScript');
 show(__DIR__ . '/tests/src/Lexer/JavaScript/expected.json.html', 'JSON');
+show(__DIR__ . '/tests/src/Lexer/Latte/expected.html', 'Latte');
 show(__DIR__ . '/tests/src/Lexer/Php/expected.html', 'PHP');
