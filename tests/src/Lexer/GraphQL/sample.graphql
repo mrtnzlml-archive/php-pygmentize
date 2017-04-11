@@ -1,5 +1,5 @@
 query getNameOrToken($switch: Boolean!) {
-  user(id: "007") { # comment
+  user(id: "007", di: "009") { # comment
     username @skip(if: $switch)
     token @include(if: $switch)
     ... on User {

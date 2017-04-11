@@ -11,7 +11,7 @@ final class GraphQL implements \Adeira\ILexer
 			'root' => [
 				['#.*', 'Comment.Single'],
 				['\.\.\.', 'Operator'],
-				['"[\x{0009}\x{000A}\x{000D}\x{0020}-\x{FFFF}]*"', 'String.Double'],
+				['"[\x{0009}\x{000A}\x{000D}\x{0020}-\x{FFFF}]*?"', 'String.Double'],
 				['(-?0|-?[1-9][0-9]*)(\.[0-9]+[eE][+-]?[0-9]+|\.[0-9]+|[eE][+-]?[0-9]+)', 'Number.Float'],
 				['(-?0|-?[1-9][0-9]*)', 'Number.Integer'],
 				['\$+[_A-Za-z][_0-9A-Za-z]*', 'Name.Variable'],

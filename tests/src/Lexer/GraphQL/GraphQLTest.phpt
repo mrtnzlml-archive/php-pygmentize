@@ -30,7 +30,7 @@ final class GraphQLTest extends \Tester\TestCase
 	{
 		$highlighter = new Highlighter(new GraphQLLexer, new NullFormatter);
 		$highlighter->highlight(__DIR__ . '/sample.graphql');
-		Assert::same(1797, $highlighter->getComplexity());
+		Assert::same(1840, $highlighter->getComplexity());
 	}
 
 }
